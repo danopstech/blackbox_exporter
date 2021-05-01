@@ -1,9 +1,11 @@
-name: build
+name: blackbox_exporter
 
 on:
   push:
     branches:
       - 'main'
+    paths:
+      - blackbox_exporter/*
 
 jobs:
   docker:
@@ -25,6 +27,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
+          context: ./blackbox_exporter
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: ghcr.io/danopstech/blackbox_exporter:latest
