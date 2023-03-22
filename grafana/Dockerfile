@@ -1,2 +1,2 @@
-FROM grafana/grafana:9.3.2
+FROM grafana/grafana:9.4.7
 LABEL org.opencontainers.image.source = "https://github.com/danopstech/containers"
